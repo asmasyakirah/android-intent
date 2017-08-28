@@ -8,6 +8,11 @@ import android.widget.Toast;
 
 public class ReceiveActivity extends AppCompatActivity
 {
+    private static final String RECEIVE_IN          = "com.asmasyakirah.android_intent.sendIn";
+    private static final String RECEIVE_IN_RESPOND  = "com.asmasyakirah.android_intent.sendInRespond";
+    private static final String RECEIVE_OUT         = "com.asmasyakirah.xamarin_intent.sendOut";
+    private static final String RECEIVE_OUT_RESPOND = "com.asmasyakirah.xamarin_intent.sendOutRespond";
+
     Intent intent;
     String receivedAction;
     String receivedFrom;
@@ -41,12 +46,30 @@ public class ReceiveActivity extends AppCompatActivity
     public void getIntentData()
     {
         intent = getIntent();
-        receivedFrom = "Received data";
+
         if (intent != null)
         {
             receivedAction = intent.getAction();
-            receivedFrom = receivedFrom + " from " + receivedAction;
+            receivedFrom = "Received data";
             receivedData = intent.getStringExtra("DATA");
+
+            switch (receivedAction)
+            {
+                case RECEIVE_IN:
+                    break;
+
+                case RECEIVE_IN_RESPOND:
+                    // Visible respond layout
+                    break;
+
+                case RECEIVE_OUT:
+                    receivedFrom = receivedFrom + " from " + receivedAction;
+                    break;
+
+                case RECEIVE_OUT_RESPOND:
+                    receivedFrom = receivedFrom + " from " + receivedAction;
+                    break;
+            }
         }
         else
         {
