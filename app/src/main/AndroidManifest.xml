@@ -24,7 +24,7 @@
             </intent-filter>
             -->
             <intent-filter>
-                <action android:name="com.asmasyakirah.android_intent.sendOut"/>
+                <action android:name="com.asmasyakirah.xamarin_intent.sendOut"/>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
