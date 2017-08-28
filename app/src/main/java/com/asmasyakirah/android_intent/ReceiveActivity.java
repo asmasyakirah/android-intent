@@ -41,16 +41,15 @@ public class ReceiveActivity extends AppCompatActivity
     public void getIntentData()
     {
         intent = getIntent();
+        receivedFrom = receivedFromTextView.getText().toString();
         if (intent != null)
         {
-            showMessage("Received intent");
             receivedAction = intent.getAction();
-            receivedFrom = receivedFromTextView.getText().toString() + " from " + receivedAction;
+            receivedFrom = receivedFrom + " from " + receivedAction;
             receivedData = intent.getStringExtra("DATA");
         }
         else
         {
-            showMessage("No intent received");
             receivedAction = "";
             receivedData = "";
         }
