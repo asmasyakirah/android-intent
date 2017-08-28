@@ -81,6 +81,7 @@ public class ReceiveActivity extends AppCompatActivity
                     break;
 
                 case RECEIVE_OUT_RESPOND:
+                    respondLayout.setVisibility(View.VISIBLE);
                     receivedFrom = receivedFrom + " from " + receivedAction;
                     break;
             }
@@ -109,7 +110,16 @@ public class ReceiveActivity extends AppCompatActivity
         {
             public void onClick(View v)
             {
-                respondIntent.putExtra("DATA", respondInput.getText().toString());
+                switch (receivedAction)
+                {
+                    case RECEIVE_IN_RESPOND:
+                        respondIntent.putExtra("DATA", respondInput.getText().toString());
+                        break;
+
+                    case RECEIVE_OUT_RESPOND:
+                        respondIntent.putExtra("DATA", respondInput.getText().toString());
+                        break;
+                }
                 setResult(RESULT_OK, respondIntent);
                 finish();
             }

@@ -27,6 +27,10 @@
                 <action android:name="com.asmasyakirah.xamarin_intent.sendOut"/>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.asmasyakirah.xamarin_intent.sendOutRespond"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 
