@@ -1,5 +1,7 @@
 package com.asmasyakirah.android_intent;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.v4.widget.TextViewCompat;
@@ -131,6 +133,16 @@ public class SendActivity extends AppCompatActivity
 
     private void showMessage(String message)
     {
-
+        //Toast.MakeText(this, message, ToastLength.Short).Show();
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setMessage(message);
+        dialog.setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int id)
+            {
+                // Do nothing
+            }
+        });
+        dialog.show();
     }
 }
