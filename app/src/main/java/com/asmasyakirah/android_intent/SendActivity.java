@@ -144,6 +144,17 @@ public class SendActivity extends AppCompatActivity
                     break;
 
                 case SEND_OUT_RESPOND:
+                    intent = new Intent();
+                    intent.setAction(sendAction);
+                    intent.putExtra("DATA", sendInput.getText().toString());
+                    try
+                    {
+                        startActivityForResult(intent, SEND_OUT_REQUEST);
+                    }
+                    catch (Exception ex)
+                    {
+                        showMessage(ex.getMessage());
+                    }
                     break;
             }
         }
