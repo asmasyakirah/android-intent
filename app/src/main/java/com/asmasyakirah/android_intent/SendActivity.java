@@ -40,6 +40,28 @@ public class SendActivity extends AppCompatActivity
         */
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == SEND_IN_REQUEST)
+        {
+            if (resultCode == RESULT_OK)
+            {
+                String respondData = data.getStringExtra("DATA");
+                showMessage("OK! Respond: " + respondData);
+            }
+            if (resultCode == RESULT_CANCELED)
+            {
+                showMessage("Cancelled");
+            }
+            else if ((int)resultCode == 1)
+            {
+                String err = data.getStringExtra("ERRORMSG");
+                showMessage("Error: " + err);
+            }
+        }
+    }
+
     private void setupUI()
     {
         setContentView(R.layout.activity_send);
