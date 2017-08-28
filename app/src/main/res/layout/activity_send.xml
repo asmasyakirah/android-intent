@@ -6,8 +6,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/standard_padding"
     tools:context="com.asmasyakirah.android_intent.SendActivity">
 
+    <!--
     <TextView
         android:id="@+id/helloTextView"
         android:layout_width="match_parent"
@@ -17,5 +19,37 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+        -->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/standard_padding"
+        android:hint="Data"
+        android:id="@+id/sendInput" />
+
+    <Button
+        android:text="Send inside"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendInButton" />
+
+    <Button
+        android:text="Send inside respond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendInRespondButton" />
+
+    <Button
+        android:text="Send outside"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendOutButton" />
+
+    <Button
+        android:text="Send outside respond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendOutRespondButton" />
 
 </LinearLayout>
